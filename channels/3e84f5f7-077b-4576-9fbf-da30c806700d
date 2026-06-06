@@ -3,17 +3,21 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>channel-in-hl7v2-6601</name>
   <description></description>
-  <revision>1</revision>
+  <revision>2</revision>
   <sourceConnector version="26.3.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
-    <properties class="com.mirth.connect.connectors.vm.VmReceiverProperties" version="26.3.1">
+    <properties class="com.mirth.connect.connectors.tcp.TcpReceiverProperties" version="26.3.1">
       <pluginProperties/>
+      <listenerConnectorProperties version="26.3.1">
+        <host>0.0.0.0</host>
+        <port>6601</port>
+      </listenerConnectorProperties>
       <sourceConnectorProperties version="26.3.1">
-        <responseVariable>None</responseVariable>
+        <responseVariable>Auto-generate (After source transformer)</responseVariable>
         <respondAfterProcessing>true</respondAfterProcessing>
         <processBatch>false</processBatch>
-        <firstResponse>false</firstResponse>
+        <firstResponse>true</firstResponse>
         <processingThreads>1</processingThreads>
         <resourceIds class="linked-hash-map">
           <entry>
@@ -23,6 +27,29 @@
         </resourceIds>
         <queueBufferSize>1000</queueBufferSize>
       </sourceConnectorProperties>
+      <transmissionModeProperties class="com.mirth.connect.plugins.mllpmode.MLLPModeProperties">
+        <pluginPointName>MLLP</pluginPointName>
+        <startOfMessageBytes>0B</startOfMessageBytes>
+        <endOfMessageBytes>1C0D</endOfMessageBytes>
+        <useMLLPv2>false</useMLLPv2>
+        <ackBytes>06</ackBytes>
+        <nackBytes>15</nackBytes>
+        <maxRetries>2</maxRetries>
+      </transmissionModeProperties>
+      <serverMode>true</serverMode>
+      <remoteAddress></remoteAddress>
+      <remotePort></remotePort>
+      <overrideLocalBinding>false</overrideLocalBinding>
+      <reconnectInterval>5000</reconnectInterval>
+      <receiveTimeout>0</receiveTimeout>
+      <bufferSize>65536</bufferSize>
+      <maxConnections>10</maxConnections>
+      <keepConnectionOpen>true</keepConnectionOpen>
+      <dataTypeBinary>false</dataTypeBinary>
+      <charsetEncoding>DEFAULT_ENCODING</charsetEncoding>
+      <respondOnNewConnection>0</respondOnNewConnection>
+      <responseAddress></responseAddress>
+      <responsePort></responsePort>
     </properties>
     <transformer version="26.3.1">
       <elements/>
@@ -110,7 +137,7 @@
     <filter version="26.3.1">
       <elements/>
     </filter>
-    <transportName>Channel Reader</transportName>
+    <transportName>TCP Listener</transportName>
     <mode>SOURCE</mode>
     <enabled>true</enabled>
     <waitForPrevious>true</waitForPrevious>
@@ -369,7 +396,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1780787360457</time>
+        <time>1780787365386</time>
         <timezone>Europe/Belgrade</timezone>
       </lastModified>
       <pruningSettings>
