@@ -1,9 +1,9 @@
 <codeTemplate version="26.3.1">
   <id>00c5a506-144b-4d36-a734-c723a5daa57e</id>
   <name>Template 1</name>
-  <revision>1</revision>
+  <revision>2</revision>
   <lastModified>
-    <time>1780787682146</time>
+    <time>1780787686830</time>
     <timezone>Europe/Belgrade</timezone>
   </lastModified>
   <contextSet>
@@ -17,13 +17,7 @@
   </contextSet>
   <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
     <type>FUNCTION</type>
-    <code>/**
-	Modify the description here. Modify the function name and parameters as needed. One function per
-	template is recommended; create a new code template for each new function.
-
-	@param {String} arg1 - arg1 description
-	@return {String} return description
-*/
+    <code>
 function logTest() {
 	logger.info(&apos;test&apos;)
 }</code>
