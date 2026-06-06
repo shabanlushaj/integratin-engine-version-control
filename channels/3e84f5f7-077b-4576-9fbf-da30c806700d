@@ -3,7 +3,7 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>channel-in-hl7v2-6601</name>
   <description></description>
-  <revision>3</revision>
+  <revision>4</revision>
   <sourceConnector version="26.3.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -168,7 +168,7 @@
           <queueBufferSize>1000</queueBufferSize>
           <reattachAttachments>true</reattachAttachments>
         </destinationConnectorProperties>
-        <script>return;</script>
+        <script>logger.info(&apos;test&apos;);&#xd;return;</script>
       </properties>
       <transformer version="26.3.1">
         <elements/>
@@ -394,7 +394,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1780787380522</time>
+        <time>1780787388817</time>
         <timezone>Europe/Belgrade</timezone>
       </lastModified>
       <pruningSettings>
