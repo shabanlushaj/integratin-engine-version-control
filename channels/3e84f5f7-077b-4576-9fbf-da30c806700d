@@ -3,7 +3,7 @@
   <nextMetaDataId>2</nextMetaDataId>
   <name>channel-in-hl7v2-6601</name>
   <description></description>
-  <revision>2</revision>
+  <revision>3</revision>
   <sourceConnector version="26.3.1">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -146,7 +146,7 @@
     <connector version="26.3.1">
       <metaDataId>1</metaDataId>
       <name>Destination 1</name>
-      <properties class="com.mirth.connect.connectors.vm.VmDispatcherProperties" version="26.3.1">
+      <properties class="com.mirth.connect.connectors.js.JavaScriptDispatcherProperties" version="26.3.1">
         <pluginProperties/>
         <destinationConnectorProperties version="26.3.1">
           <queueEnabled>false</queueEnabled>
@@ -168,9 +168,7 @@
           <queueBufferSize>1000</queueBufferSize>
           <reattachAttachments>true</reattachAttachments>
         </destinationConnectorProperties>
-        <channelId>none</channelId>
-        <channelTemplate>${message.encodedData}</channelTemplate>
-        <mapVariables/>
+        <script>return;</script>
       </properties>
       <transformer version="26.3.1">
         <elements/>
@@ -341,7 +339,7 @@
       <filter version="26.3.1">
         <elements/>
       </filter>
-      <transportName>Channel Writer</transportName>
+      <transportName>JavaScript Writer</transportName>
       <mode>DESTINATION</mode>
       <enabled>true</enabled>
       <waitForPrevious>true</waitForPrevious>
@@ -396,7 +394,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1780787365386</time>
+        <time>1780787380522</time>
         <timezone>Europe/Belgrade</timezone>
       </lastModified>
       <pruningSettings>
